@@ -23,27 +23,57 @@ veggy <- cabbages
 
 # Methods
 
+We explain VitC based on Cult  
+Vitc is numerical, while Cult is categorical  
+Helper file is numerical~cat  
+
+
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
 # Results
+
+
+
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
 
+```{r}
+boxplot(VitC~Cult,data=veggy)
+```
+
+Based on the boxplot above, we're shown that c52 contains much more VitC than that of c39. As well as that, c52's average is much higher than c39
+
 ### Graphical Descriptive Results
+
+
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ### Numerical Descriptive Results
 
+```{r}
+favstats(VitC~Cult,data=veggy)
+```
+Based on the numerical results, we can determine that c52 carries much more VitC than c39, having a greater median than c39  
+
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ## Inferential Results
+
+```{r}
+model1 <- aov(VitC~Cult,data=veggy)
+summary.aov(model1)
+```
+Based on our P-value 3.07e-08 we can Reject the null hypothesis due to it being less than .005
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 
 # Discussion and Conclusion
+To answer our intial question on "Is there a difference in average VitC between c39 and c52 cultivation methods?"
+Based on the methods used there was not a significant amount of Vitc based on the cultivation, From both c59 and c32
+
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
